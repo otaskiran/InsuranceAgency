@@ -15,14 +15,16 @@ namespace InsuranceAgency.Pages.Agencies
 
         public ListModel(IConfiguration config, IAgencyData agencyData)
         {
+            this.Message = "";
+            this.Agencies = new List<Agency>();
             this.config = config;
             this.agencyData = agencyData;
         }
 
-        public void OnGet()
+        public void OnGet(string searchTerm)
         {
             Message = config["Message"];
-            Agencies = agencyData.GetAll();
+            Agencies = agencyData.GetAgenciesByName(searchTerm);
         }
     }
 }
