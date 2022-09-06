@@ -1,0 +1,21 @@
+﻿@page
+@model InsuranceAgency.Pages.Agencies.ListModel
+@{
+}
+
+<h1>
+    Sigorta Acenteleri
+</h1>
+
+
+<table class="table">
+    @foreach (var agency in Model.Agencies)
+    {
+        <tr>
+            <td>@agency.Name</td>
+            <td>@agency.Location</td>
+            <td>@agency.AgencyType</td>
+        </tr>
+    }
+</table>
+@Model.Message
