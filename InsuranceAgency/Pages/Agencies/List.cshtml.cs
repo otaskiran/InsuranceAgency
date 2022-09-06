@@ -12,6 +12,8 @@ namespace InsuranceAgency.Pages.Agencies
 
         public string Message { get; set; }
         public IEnumerable<Agency> Agencies { get; set; }
+        [BindProperty(SupportsGet = true)]
+        public string SearchTerm { get; set; }
 
         public ListModel(IConfiguration config, IAgencyData agencyData)
         {
@@ -21,10 +23,10 @@ namespace InsuranceAgency.Pages.Agencies
             this.agencyData = agencyData;
         }
 
-        public void OnGet(string searchTerm)
+        public void OnGet()
         {
             Message = config["Message"];
-            Agencies = agencyData.GetAgenciesByName(searchTerm);
+            Agencies = agencyData.GetAgenciesByName(SearchTerm);
         }
     }
 }
