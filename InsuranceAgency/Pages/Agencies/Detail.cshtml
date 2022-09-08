@@ -1,0 +1,20 @@
+﻿@page
+@model InsuranceAgency.Pages.Agencies.DetailModel
+@{
+}
+
+
+<h2>
+    @Model.Agency.Name
+</h2>
+<div>
+    Id: @Model.Agency.Id
+</div>
+<div>
+    Location : @Model.Agency.Location
+</div>
+<div>
+    Type: @Model.Agency.AgencyType
+</div>
+
+<a asp-page="./List" class="btn btn-default">Acente Listesi</a>
