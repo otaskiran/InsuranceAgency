@@ -11,7 +11,9 @@ obj/
 /wwwroot/node_modules
 
 # End of https://www.toptal.com/developers/gitignore/api/dotnetcore
+.vs/
 .vs/InsuranceAgency/DesignTimeBuild/.dtbcache.v2
 .vs/InsuranceAgency/v17/.suo
 *.v2
 .vs/InsuranceAgency/v17/.suo
+*/.suo
