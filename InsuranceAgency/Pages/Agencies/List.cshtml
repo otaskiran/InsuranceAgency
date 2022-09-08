@@ -27,6 +27,13 @@
             <td>@agency.Name</td>
             <td>@agency.Location</td>
             <td>@agency.AgencyType</td>
+            <td>
+                <a class="btn btn-lg"
+                asp-page="./Detail" 
+                asp-route-agencyId="@agency.Id">
+                    <i class="glyphicon glyphicon-zoom-in">Detail</i>                
+                </a>
+            </td>
         </tr>
     }
 </table>

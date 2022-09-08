@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InsuranceAgency", "Insuranc
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InsuranceAgency.Core", "InsuranceAgency.Core\InsuranceAgency.Core.csproj", "{15214661-2BDF-4FE4-9F29-D01B949829E3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InsuranceAgency.Data", "InsuranceAgency.Data\InsuranceAgency.Data.csproj", "{F1A452F0-ED7E-41A1-8F4A-714EBB939F18}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InsuranceAgency.Data", "InsuranceAgency.Data\InsuranceAgency.Data.csproj", "{F1A452F0-ED7E-41A1-8F4A-714EBB939F18}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
