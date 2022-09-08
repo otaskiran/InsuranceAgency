@@ -10,6 +10,7 @@ namespace InsuranceAgency.Data
     public interface IAgencyData
     {
         IEnumerable<Agency> GetAgenciesByName(string name);
+        Agency GetById(int agencyId);
     }
 
     public class InMemoryAgencyData : IAgencyData
@@ -31,6 +32,11 @@ namespace InsuranceAgency.Data
                    where string.IsNullOrEmpty(name) || a.Name.StartsWith(name)
                    orderby a.Name
                    select a;
+        }
+
+        public Agency GetById(int agencyId)
+        {
+            return agencies.SingleOrDefault(a => a.Id == agencyId);
         }
     }
 }
