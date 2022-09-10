@@ -1,0 +1,32 @@
+﻿@page "{agencyId:int}"
+@model InsuranceAgency.Pages.Agencies.EditModel
+@{
+}
+
+
+<h2>Editing @Model.Agency.Name</h2>
+
+<form method="post">
+    <input type="hidden" asp-for="Agency.Id" />
+    
+    <div class="form-group">
+        <label asp-for="Agency.Name"></label>
+        <input asp-for="Agency.Name" class="form-control" />
+    </div>
+
+     <div class="form-group">
+        <label asp-for="Agency.Location"></label>
+        <input asp-for="Agency.Location" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Agency.AgencyType"></label>
+        <select class="form-control" asp-for="Agency.AgencyType"
+        asp-items="Model.AgencyTypes">
+
+        </select>
+    </div>
+
+
+    <button type="submit" class="btn btn-primary">Save</button>
+</form>
