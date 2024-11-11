@@ -11,6 +11,8 @@ namespace InsuranceAgency.Data
     {
         IEnumerable<Agency> GetAgenciesByName(string name);
         Agency GetById(int agencyId);
+        Agency Update(Agency updatedAgency);
+        int Commit();
     }
 
     public class InMemoryAgencyData : IAgencyData
@@ -26,6 +28,11 @@ namespace InsuranceAgency.Data
             };
         }
 
+        public int Commit()
+        {
+            return 0;
+        }
+
         public IEnumerable<Agency> GetAgenciesByName(string name = null)
         {
             return from a in agencies
@@ -38,5 +45,19 @@ namespace InsuranceAgency.Data
         {
             return agencies.SingleOrDefault(a => a.Id == agencyId);
         }
+
+        public Agency Update(Agency updatedAgency)
+        {
+            var agency = agencies.SingleOrDefault(a => a.Id == updatedAgency.Id);
+            if (agencies != null)
+            {
+                agency.Name = updatedAgency.Name;
+                agency.Location = updatedAgency.Location;
+                agency.AgencyType = updatedAgency.AgencyType;
+            }
+            return agency;
+        }
+
+
     }
 }

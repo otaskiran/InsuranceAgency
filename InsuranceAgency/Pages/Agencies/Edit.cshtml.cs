@@ -11,6 +11,7 @@ namespace InsuranceAgency.Pages.Agencies
         private readonly IAgencyData agencyData;
         private readonly IHtmlHelper htmlHelper;
 
+        [BindProperty]
         public Agency Agency { get; set; }
         public IEnumerable<SelectListItem> AgencyTypes { get; set; }
 
@@ -29,5 +30,12 @@ namespace InsuranceAgency.Pages.Agencies
             }
             return Page();
         } 
+
+        public IActionResult OnPost()
+        {
+            Agency = agencyData.Update(Agency);
+            agencyData.Commit();
+            return Page(); 
+        }
     }
 }
